@@ -22,8 +22,8 @@ stages:
     steps:
     - task: Docker@2
       inputs:
-        containerRegistry: 'Binarythistle Docker Hub'
-        repository: 'binarythistle/weatherapi'
+        containerRegistry: 'Shiva Docker Hub'
+        repository: 'shivavk12345/weatherapi'
         command: 'buildAndPush'
         Dockerfile: '**/Dockerfile'
         tags: |
@@ -37,7 +37,7 @@ stages:
     pool:
       vmImage: 'ubuntu-latest'
     variables: 
-    - group: TeraformEnvVars
+    - group: TerraformEnvVars
     steps:
     - script: |
         set -e
