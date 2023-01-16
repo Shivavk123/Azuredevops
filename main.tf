@@ -1,27 +1,12 @@
 provider "azurerm" {
-    version = "3.38.0"
+    version = "3.39.0"
     features {}
 }
 
-terraform {
-    backend "azurerm" {
-        resource_group_name  = "tf_rg_blobstore"
-        storage_account_name = "tfstoragebinarythistlea"
-        container_name       = "tfstate"
-        key                  = "terraform.tfstate"
-    }
-}
-
-variable "imagebuild" {
-  type        = string
-  description = "Latest Image Build"
-}
-
-
-
-resource "azurerm_resource_group" "tf_test" {
-  name = "tfmainrg"
+resource "azurerm_resource_group"  "tf_test" {
+  name =  "tfmainrg"
   location = "Australia East"
+
 }
 
 resource "azurerm_container_group" "tfcg_test" {
@@ -29,13 +14,13 @@ resource "azurerm_container_group" "tfcg_test" {
   location                  = azurerm_resource_group.tf_test.location
   resource_group_name       = azurerm_resource_group.tf_test.name
 
-  ip_address_type     = "public"
-  dns_name_label      = "binarythistlewa"
+  ip_address_type     = "Public"
+  dns_name_label      = "shivavk"
   os_type             = "Linux"
 
   container {
       name            = "weatherapi"
-      image           = "shivavk12345/weatherapi:${var.imagebuild}"
+      image           = "shivavk12345/weatherapi"
         cpu             = "1"
         memory          = "1"
 
