@@ -28,7 +28,7 @@ resource "azurerm_container_group" "tfcg_test" {
   resource_group_name       = azurerm_resource_group.tf_test.name
 
   ip_address_type     = "Public"
-  dns_name_label      = "binarythistlewa"
+  dns_name_label      = "shivavkdns"
   os_type             = "Linux"
 
   container {
