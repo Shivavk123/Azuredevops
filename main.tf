@@ -6,7 +6,7 @@ provider "azurerm" {
 terraform {
     backend "azurerm" {
         resource_group_name  = "tf_rg_blobstore"
-        storage_account_name = "tfstorageshivavk"
+        storage_account_name = "tfstorageshivavkjdhfjd"
         container_name       = "tfstate"
         key                  = "terraform.tfstate"
     }
